@@ -1,0 +1,15 @@
+[Unit]
+Description=asari-muse Slack bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/asari-muse-slack
+EnvironmentFile=%h/asari-muse-slack/.env
+ExecStart=%h/asari-muse-slack/.venv/bin/python %h/asari-muse-slack/bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

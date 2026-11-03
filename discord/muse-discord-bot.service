@@ -1,0 +1,16 @@
+[Unit]
+Description=Muse resident Discord bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/discord-bot
+EnvironmentFile=/path/to/discord-bot/.env
+EnvironmentFile=/path/to/discord-bot/proxy.env
+ExecStart=/path/to/discord-bot/.venv/bin/python /path/to/discord-bot/bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

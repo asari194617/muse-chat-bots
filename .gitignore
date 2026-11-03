@@ -1,0 +1,8 @@
+.env
+proxy.env
+owner.json
+queue/
+history/
+__pycache__/
+.venv/
+*.log
